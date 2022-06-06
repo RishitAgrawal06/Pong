@@ -45,18 +45,19 @@ screen_height = 720
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Pong')
 
+bg_color = pygame.Color('grey12')
+light_grey = (200,200,200)
+
 # Game Rectangles
 ball = pygame.Rect(screen_width/2 - 15,screen_height/2 - 15,30,30)
 player = pygame.Rect(screen_width - 20, screen_height/2 - 70,10,140)
 opponent = pygame.Rect(10, screen_height/2 - 70, 10, 140)
 
-bg_color = pygame.Color('grey12')
-light_grey = (200,200,200)
-
+# Game Variables
 ball_speed_x = 2 * random.choice((1.-1))
 ball_speed_y = 2 * random.choice((1.-1))
 player_speed = 0
-opponent_speed = 7
+opponent_speed = 5
 
 while True:
     # Handling the input
@@ -66,14 +67,14 @@ while True:
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_DOWN:
-                player_speed +=7
+                player_speed +=5
             if event.key == pygame.K_UP:
-                player_speed -=7
+                player_speed -=5
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
-                player_speed -=7
+                player_speed -=5
             if event.key == pygame.K_UP:
-                player_speed +=7
+                player_speed +=5
 
 
     ball_animation()
