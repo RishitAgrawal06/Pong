@@ -32,8 +32,8 @@ def opponent_ai():
 def ball_restart():
     global ball_speed_x, ball_speed_y
     ball.center = (screen_width/2, screen_height/2)
-    ball_speed_y *= random.choice((1.-1))
-    ball_speed_x *= random.choice((1.-1))
+    ball_speed_y *= random.choice((1,-1))
+    ball_speed_x *= random.choice((1,-1))
 
 # General setup
 pygame.init()
@@ -54,8 +54,8 @@ player = pygame.Rect(screen_width - 20, screen_height/2 - 70,10,140)
 opponent = pygame.Rect(10, screen_height/2 - 70, 10, 140)
 
 # Game Variables
-ball_speed_x = 2 * random.choice((1.-1))
-ball_speed_y = 2 * random.choice((1.-1))
+ball_speed_x = 3 * random.choice((1,-1))
+ball_speed_y = 3 * random.choice((1,-1))
 player_speed = 0
 opponent_speed = 5
 
