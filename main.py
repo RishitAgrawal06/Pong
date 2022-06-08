@@ -81,7 +81,7 @@ while True:
             if event.key == pygame.K_UP:
                 player_speed +=5
 
-
+    # Calling all the methods
     ball_animation()
     player_animation()
     opponent_ai()
