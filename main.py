@@ -1,5 +1,6 @@
 import pygame, sys, random
 
+# function for the ball animation
 def ball_animation():
     global ball_speed_x, ball_speed_y
     ball.x += ball_speed_x
@@ -12,6 +13,7 @@ def ball_animation():
     if ball.colliderect(player) or ball.colliderect(opponent):
         ball_speed_x *= -1
 
+# function for the player (left side) animation
 def player_animation():
     player.y += player_speed
     if player.top <= 0:
@@ -19,6 +21,7 @@ def player_animation():
     if player.top >= screen_height:
         player.bottom = screen_height
 
+# function for the opponent (right side) animation to move by itself
 def opponent_ai():
     if opponent.top < ball.y:
         opponent.top += opponent_speed
@@ -29,6 +32,7 @@ def opponent_ai():
     if opponent.top >= screen_height:
         opponent.bottom = screen_height
 
+# function for ball to restart when it touches one of the left/right side barriers
 def ball_restart():
     global ball_speed_x, ball_speed_y
     ball.center = (screen_width/2, screen_height/2)
@@ -45,6 +49,7 @@ screen_height = 720
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Pong')
 
+# color scheme
 bg_color = pygame.Color('grey12')
 light_grey = (200,200,200)
 
